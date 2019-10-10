@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Spices</title>
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      main {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+      main > * {
+        width: 100%;
+      }
+      h1 {
+        position: fixed;
+        top: 0;
+        font-family: Helvetica;
+      }
+    </style>
+    <main></main>
+    <h1></h1>
+    <script>
+      let main = document.querySelector("main");
+      let img;
+      let size = document.querySelector("h1");
+      for (i = 1; i < 28; i++) {
+        img = document.createElement("img");
+        main.appendChild(img);
+        img.src = "media/" + i + ".jpg";
+      }
+      size.innerText = "box size: " + img.width + "px";
+      window.onresize = function() {
+        size.innerText = "box size: " + img.width + "px";
+      };
+    </script>
+  </body>
+</html>
